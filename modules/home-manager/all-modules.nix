@@ -1,0 +1,9 @@
+[
+  ./emacs.nix
+  ./herbstluftwm.nix
+  ./halloy.nix
+  ./alacritty.nix
+  ./rofi.nix
+  ./tmux.nix
+  ./gtk/default.nix
+]
