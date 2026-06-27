@@ -23,8 +23,11 @@ in
     '';
 
     home.file.".emacs.d/font.el".text = ''
+      (setq wanted-font-size (or (bound-and-true-p own-font-size)
+                     ${toString (builtins.ceil config.nix-theme.fonts.size)}))
+
       (add-to-list 'default-frame-alist
-             '(font . "${config.nix-theme.fonts.monospace.name}-${toString (builtins.ceil config.nix-theme.fonts.size)}"))
+             `(font . ,(format "${config.nix-theme.fonts.monospace.name}-%d" wanted-font-size)))
     '';
   };
 }
